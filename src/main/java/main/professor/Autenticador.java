@@ -2,10 +2,14 @@ package main.professor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Autenticador {
 
-    public static boolean autenticaID(int id){
+    public static boolean validaId(int id){
         return id > 0;
     }
     public static boolean validaNome(String nome){
@@ -15,7 +19,7 @@ public class Autenticador {
         return !nome.matches(".*\\d.*");
     }
 
-    public static boolean autenticaDia(String entrada) {
+    public static boolean validarDia(String entrada) {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
             Date data = sdf.parse(entrada);
@@ -25,7 +29,7 @@ public class Autenticador {
         }
     }
 
-    public static boolean autenticaHora(String entrada) {
+    public static boolean validarHora(String entrada) {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
             sdf.setLenient(false); // Para garantir uma validação estrita
@@ -35,16 +39,25 @@ public class Autenticador {
             return false;
         }
     }
-    public static boolean autenticaPeriodo(String periodo){
+    public static boolean validaPeriodo(String periodo){
         return "integral".equals(periodo) || "noturno".equals(periodo);
     }
 
-    public static boolean autenticaSala(int sala){
+    public static boolean validaSala(int sala){
         return sala >= 1 && sala <= 30;
     }
 
-    public static boolean autenticaPredio(int numeroPredio, int minimo, int maximo) {
+    public static boolean validaPredio(int numeroPredio, int minimo, int maximo) {
         return numeroPredio >= minimo && numeroPredio <= maximo;
     }
 
+    public String Validador(int id) {
+        // Implementação da busca do professor
+        return "Nome do Professor"; // Substitua pelo resultado real da busca.
+    }
+
+    public boolean profExiste(int id) {
+        // Implementação para verificar se o professor existe
+        return true; // Substitua pelo resultado real da verificação.
+    }
 }

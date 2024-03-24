@@ -20,7 +20,7 @@ public class Main {
         System.out.print("Id do professor: ");
         id = scanner.nextInt();
         scanner.nextLine();
-        if(!Autenticador.autenticaID(id)){
+        if(!Autenticador.validaId(id)){
             System.out.println("Nome invalido");
             return;
         }
@@ -34,14 +34,14 @@ public class Main {
 
         System.out.println("Dia da semana (ex: segunda-feira):");
         dia = scanner.nextLine();
-        if(!Autenticador.autenticaDia(dia)){
+        if(!Autenticador.validarDia(dia)){
             System.out.println("Data Invalida");
             return;
         }
 
         System.out.print("Horário de Atendimento: ");
         horario = scanner.nextLine();
-        if(!Autenticador.autenticaHora(horario)){
+        if(!Autenticador.validarHora(horario)){
             System.out.println("Horario Invalido");
             return;
         }
@@ -50,16 +50,15 @@ public class Main {
 
         System.out.print("Período (integral/noturno): ");
         periodo = scanner.nextLine();
-        if(!Autenticador.autenticaPeriodo(periodo)){
+        if(!Autenticador.validaPeriodo(periodo)){
             System.out.println("Periodo invalido");
             return;
         }
 
-
         System.out.print("Sala 1-30: ");
         sala = scanner.nextInt();
         scanner.nextLine();
-        if(!Autenticador.autenticaSala(sala)){
+        if(!Autenticador.validaSala(sala)){
             System.out.println("Sala invalida");
             return;
         }
